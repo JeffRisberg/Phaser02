@@ -1,0 +1,9 @@
+{
+  "name": "phaser01",
+  "private": true,
+  "dependencies": {
+    "almond": "~0.2.9",
+    "phaser": "~v2.1.2",
+    "requirejs": "~2.1.14"
+  }
+}
