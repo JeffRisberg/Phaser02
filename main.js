@@ -5,7 +5,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '',
         update: update
     });
 
-var platforms, player, wheel, cursors, stars;
+var platforms, player, wheel1, wheel2, cursors, stars;
 var score = 0;
 var scoreText = {text: 0};
 
@@ -38,8 +38,12 @@ function create() {
     player.anchor.setTo(0.5, 0.5);
 
     // The wheel and its settings
-    wheel = game.add.sprite(game.world.width / 2, game.world.height / 2, 'wheel');
-    wheel.anchor.setTo(0.5, 0.5);
+    wheel1 = game.add.sprite(game.world.width * 0.333, game.world.height / 2, 'wheel');
+    wheel1.anchor.setTo(0.5, 0.5);
+
+    // The wheel and its settings
+    wheel2 = game.add.sprite(game.world.width * 0.667, game.world.height / 2, 'wheel');
+    wheel2.anchor.setTo(0.5, 0.5);
 
     cursors = game.input.keyboard.createCursorKeys();
     createStars();
@@ -111,5 +115,6 @@ function update() {
         game.physics.arcade.velocityFromAngle(player.angle, 300, player.body.velocity);
     }
 
-    wheel.angle += 1;
+    wheel1.angle += 1;
+    wheel2.angle += 1;
 }
