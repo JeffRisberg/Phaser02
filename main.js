@@ -1,9 +1,10 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '',
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'Phaser02',
     {
         preload: preload,
         create: create,
         update: update
-    });
+    }
+);
 
 var platforms, player, wheel1, wheel2, cursors, stars;
 var score = 0;
@@ -48,8 +49,7 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     createStars();
 
-    // var scoreText;
-    scoreText = game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#000' });
+    scoreText = game.add.text(16, 16, 'Score: ' + score, { fontSize: '32px', fill: '#000' });
 }
 
 function createStars() {
