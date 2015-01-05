@@ -1,4 +1,4 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'Phaser02',
+var game = new Phaser.Game("100", "100", Phaser.AUTO, 'Phaser02',
     {
         preload: preload,
         create: create,
@@ -23,12 +23,11 @@ function create() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     // A simple background for our game
-    game.add.sprite(0, 0, 'sky');
-
+    game.add.tileSprite(0, 0, game.width, game.height, 'sky');
     createPlatform();
 
     // The player and its settings
-    player = game.add.sprite(32, game.world.height - 150, 'spaceship');
+    player = game.add.sprite(32, game.height - 150, 'spaceship');
 
     // We need to enable physics on the player
     game.physics.arcade.enable(player);
