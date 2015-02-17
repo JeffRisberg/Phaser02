@@ -16,6 +16,8 @@ function preload() {
     game.load.image('star', 'assets/star.png');
     game.load.image('spaceship', 'assets/spaceship.png');
     game.load.image('wheel', 'assets/wheel.png');
+
+    game.load.spritesheet('button', 'assets/button_sprite_sheet.png', 193, 71);
 }
 
 function create() {
@@ -49,6 +51,30 @@ function create() {
     createStars();
 
     scoreText = game.add.text(16, 16, 'Score: ' + score, { fontSize: '32px', fill: '#000' });
+
+    // An example button
+    button = game.add.button(game.world.width - 220, 20, 'button', actionOnClick, this, 2, 1, 0);
+
+    button.onInputOver.add(over, this);
+    button.onInputOut.add(out, this);
+    button.onInputUp.add(up, this);
+}
+
+function up() {
+    console.log('button up', arguments);
+}
+
+function over() {
+    console.log('button over');
+}
+
+function out() {
+    console.log('button out');
+}
+
+function actionOnClick() {
+    background.visible = !background.visible;
+
 }
 
 function createStars() {
