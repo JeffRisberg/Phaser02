@@ -50,6 +50,7 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     createStars();
 
+    // An example text element
     scoreText = game.add.text(16, 16, 'Score: ' + score, { fontSize: '32px', fill: '#000' });
 
     // An example button
