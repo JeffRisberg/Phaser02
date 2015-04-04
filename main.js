@@ -62,7 +62,7 @@ function create() {
 }
 
 function up() {
-    console.log('button up', arguments);
+    console.log('button up');
 }
 
 function over() {
@@ -73,9 +73,8 @@ function out() {
     console.log('button out');
 }
 
-function actionOnClick() {
-    background.visible = !background.visible;
-
+function actionOnClick(e) {
+    console.log(e);
 }
 
 function createStars() {
